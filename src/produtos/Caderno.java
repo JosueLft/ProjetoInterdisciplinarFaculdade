@@ -64,10 +64,13 @@ public class Caderno extends Produto implements Manipulacao {
     //metodos sobreescritos da classe manipulação que esta sendo implementada
     @Override
     public String consulta() {//metodo de consulta que retorna o valor de todos os atributos da classe em uma mensagem
-        msg = "\n--------------------\n" + "Marca: " + this.getMarca() + "\nValor: " + this.getValor() +
-            "\nQuantidade de Folhas: " + this.getQtdDeFolhas() + "\nTamanho: " +
-            this.getTamanho() + "\nTipo: " + this.getTipo() + "\nCapadura: " +
-            this.isCapadura() + "\n--------------------\n";
+        msg = "Marca: " + this.getMarca() +
+                "\nTipo: " + this.getTipo() +
+                "\nTamanho: " + this.getTamanho() +
+                "\nQuantidade de Folhas: " + this.getQtdDeFolhas() +
+                "\nValor: " + this.getValor() +
+                "\nCapadura: " + this.isCapadura() +
+                "\n--------------------\n";
         return msg;
     }
     //metodo de cadastrado

@@ -42,7 +42,7 @@ public class CaixaLapis extends Produto implements Manipulacao {
 
     @Override
     public String consulta() {//metodo de consulta que retorna o valor de todos os atributos da classe em uma mensagem
-        String msg = "\n--------------------\n" + "Marca: " + this.getMarca() + "\nValor: " + this.getValor() +
+        String msg = "Marca: " + this.getMarca() + "\nValor: " + this.getValor() +
                 "\nQuantidade de Folhas: " + this.getQuantidade() + "\nColorido: " +
                 this.isColorido() + "\n--------------------\n";
         return msg;

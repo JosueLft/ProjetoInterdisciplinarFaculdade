@@ -5,6 +5,8 @@
 package main;
 
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import pedido.Pedido;
 import produtos.Caderno;
 import produtos.CaixaLapis;
@@ -77,6 +79,7 @@ public class Principal {
                 break;
             case 4: 
                 p1 = new Pedido();
+                p1.cadastro();
                 this.cadastrar();
                 break;
             default:
@@ -95,7 +98,6 @@ public class Principal {
         if(ret != null){
             escolha = Integer.parseInt(ret);
         }
-        escolha = 0;
         switch (escolha) {
             case 1:
                 JOptionPane.showMessageDialog(null, c.consulta());
@@ -110,26 +112,35 @@ public class Principal {
                 this.consultar();
                 break;
             case 4: 
-                JOptionPane.showMessageDialog(null, p1.consulta());
+                JTextArea txtArea = new JTextArea(20, 20);
+                txtArea.setText(p.consulta());
+                JScrollPane scroll = new JScrollPane(txtArea);
+                scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+                JOptionPane.showMessageDialog(null, scroll);
                 this.consultar();
                 break;
             default:
                 this.menu();
                 break;
         }
+        escolha = 0;
     }
     public void listar() {// metodo utilizado para listar todo o conteudo cadastrado
-        JOptionPane.showMessageDialog(null, "------------------ Lista ------------------\n" + 
-                "------ Caderno ------"
+        JTextArea txtArea = new JTextArea(20, 20);
+        txtArea.setText("------------------ Lista ------------------\n" + 
+                "------ Caderno ------\n"
                         + c.consulta() +
-                "------ Papel ------"
+                "------ Papel ------\n"
                         + p.consulta() +
-                "------ Caixa de Lapis ------"
+                "------ Caixa de Lapis ------\n"
                         + cl.consulta() + 
-                "------ Pedido ------"
+                "------ Pedido ------\n"
                         + p1.consulta() + "\n" +
-                "Sair(5)\n" + 
                 "-----------------------------------------------");
+        JScrollPane scroll = new JScrollPane(txtArea);
+        scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JOptionPane.showConfirmDialog(null, scroll);
+        this.menu();
         escolha = 0;
     }
     

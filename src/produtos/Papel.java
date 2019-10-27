@@ -78,7 +78,7 @@ public class Papel extends Produto implements Manipulacao{
     
     @Override// metodo sobreescrito da interface manipulação
     public String consulta() {
-        String msg = "\n--------------------\n" + "Marca: " + this.getMarca() + "\nValor: " + this.getValor() +
+        String msg = "Marca: " + this.getMarca() + "\nValor: " + this.getValor() +
                 "\nCor: " + this.getCor() + "\nTipo: " +
                 this.getTipo() + "\nLargura: " + this.getLargura() + "\nAltura: " +
                 this.getAltura() + "\nGramatura: " + this.getGramatura() + "\nPaltado: " + this.isPaltado() 
